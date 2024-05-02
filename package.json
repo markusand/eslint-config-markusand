@@ -1,0 +1,28 @@
+{
+  "name": "eslint-config-markusand",
+  "version": "1.0.0",
+  "description": "Opinionated linting configuration for TypeScript and Vue",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "Marc Vilella <mvilella.and@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-import-resolver-custom-alias": "^1.3.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-vue": "^9.25.0"
+  }
+}
+ 
