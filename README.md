@@ -22,3 +22,32 @@ Add the config to the **.eslintrc** file. Use `eslint-config-markusand/vue` if t
   "extends": ["eslint-config-markusand"],
 }
 ```
+
+### Aliased imports
+
+To resolve aliased imports, add the paths the option in `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "/@/*": ["./src/*"],
+    },
+  },
+}
+```
+
+If using Vite, add configuration in `vite.config.ts`
+
+```ts
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  resolve: {
+    alias: [
+      { find: '/@', replacement: path.resolve(__dirname, './src') },
+    ],
+  },
+});
+```
