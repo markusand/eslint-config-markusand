@@ -39,6 +39,7 @@ module.exports = module.exports = {
     'lines-between-class-members': ['error', 'always', {
       exceptAfterSingleLine: true,
     }],
+    "no-shadow": "off",
     'import/no-absolute-path': 'off',
     'import/no-extraneous-dependencies': ['error', { 
       devDependencies: true,
