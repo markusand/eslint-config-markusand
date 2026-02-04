@@ -1,6 +1,6 @@
 import vuePlugin from 'eslint-plugin-vue';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import baseConfig from './index.js';
+import baseConfig from './base.js';
 
 export default [
   // Spread base config

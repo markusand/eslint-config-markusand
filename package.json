@@ -3,9 +3,9 @@
   "version": "2.0.0",
   "description": "Opinionated linting configuration for TypeScript and Vue (ESLint 9+)",
   "type": "module",
-  "main": "./src/index.js",
+  "main": "./src/base.js",
   "exports": {
-    ".": "./src/index.js",
+    ".": "./src/base.js",
     "./vue": "./src/vue.js"
   },
   "scripts": {

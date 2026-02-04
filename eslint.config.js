@@ -1,5 +1,5 @@
 // Use our own config to lint ourselves (dogfooding)
-import config from './src/index.js';
+import config from './src/base.js';
 
 export default [
   ...config,
