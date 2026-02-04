@@ -1,53 +1,70 @@
-# markusand's ESLinft config
+# markusand's ESLint config
 
-Very opinionated linting configuration for TypeScript and Vue.
+Very opinionated linting configuration for TypeScript and Vue projects using **ESLint 9+**.
 
-- **Airbnb style** guide for [Javascript](https://github.com/airbnb/javascript) and [TypeScript](https://typescript-eslint.io/rules/)
-- **Recommended style** for [Vue](https://eslint.vuejs.org/rules/) and [TypeScript](https://github.com/vuejs/eslint-config-typescript)
-- :warning: Very opinionated custom rules overrides
-- Support for **import** linting
+- **ESLint recommended** + manually configured Airbnb-style rules
+- **Recommended style** for [Vue 3](https://eslint.vuejs.org/rules/) and [TypeScript](https://typescript-eslint.io/)
+- Very opinionated custom rules overrides
+- Support for **import** linting with path alias resolution
+
+## Requirements
+
+- ESLint 9.0+
+- Vue 3
+
+## Installation
+
+```bash
+npm install -D eslint@^9.0.0 eslint-config-markusand
+```
 
 ## Usage
 
-Install the dependency
+Create an `eslint.config.js` file in your project root:
 
-```bash
-npm i -D eslint-config-markusand
+```javascript
+import base from 'eslint-config-markusand';
+
+export default [
+  ...base,
+  // Your project-specific overrides
+];
 ```
 
-Add the config to the **.eslintrc** file. Use `eslint-config-markusand/vue` if the project uses Vue.
+For Vue projects:
 
-```json
-{
-  "extends": ["eslint-config-markusand"],
-}
+```javascript
+import vue from 'eslint-config-markusand/vue';
+
+export default [
+  ...vue,
+  // Your project-specific overrides
+];
 ```
 
-### Aliased imports
+### Aliased Imports
 
-To resolve aliased imports, add the paths the option in `tsconfig.json`
+To resolve aliased imports, add the `paths` option in your `tsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
     "paths": {
-      "/@/*": ["./src/*"],
-    },
-  },
+      "/@/*": ["./src/*"]
+    }
+  }
 }
 ```
 
-If using Vite, add configuration in `vite.config.ts`
+The import resolver will automatically use these path mappings from your TypeScript configuration.
 
-```ts
-import { defineConfig } from 'vite';
-import path from 'path';
+## Migration from v1.x
 
-export default defineConfig({
-  resolve: {
-    alias: [
-      { find: '/@', replacement: path.resolve(__dirname, './src') },
-    ],
-  },
-});
+Update Dependencies
+
+```bash
+npm install -D eslint@^9.0.0 eslint-config-markusand@^2.0.0
 ```
+
+Delete Old Config Files. ESLint 9 no longer uses `.eslintrc.*` files.
+Create an `eslint.config.js` file as shown in the Usage section above.
