@@ -12,6 +12,6 @@
       "/@/*": ["./src/*"]
     }
   },
-  "include": ["*.ts", "*.js", "*.vue"],
+  "include": ["*.ts", "*.js"],
   "exclude": ["node_modules"]
 }
