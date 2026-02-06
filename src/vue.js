@@ -1,6 +1,7 @@
 import vuePlugin from 'eslint-plugin-vue';
+import importX from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import baseConfig from './base.js';
+import baseConfig, { sharedRules, importRules } from './base.js';
 
 export default [
   // Spread base config
@@ -9,22 +10,32 @@ export default [
   // Vue plugin recommended config for Vue 3
   ...vuePlugin.configs['flat/recommended'],
 
-  // Override parser for Vue files with TypeScript
+  // Configuration for Vue files
   {
     files: ['**/*.vue'],
+    plugins: {
+      'import-x': importX,
+    },
     languageOptions: {
       parserOptions: {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.vue'],
         ecmaVersion: 'latest',
         sourceType: 'module',
+        projectService: true,
       },
     },
-  },
-
-  // Custom Vue rules
-  {
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          extensions: ['.ts', '.vue', '.json', '.yaml'],
+        }),
+      ],
+    },
     rules: {
+      ...sharedRules,
+      ...importRules,
       'vue/multi-word-component-names': 'off',
       'vue/singleline-html-element-content-newline': 'off',
       'vue/component-tags-order': ['error', {
@@ -38,19 +49,6 @@ export default [
         singleline: 4,
         multiline: 1,
       }],
-    },
-  },
-
-  // Update import resolver settings for .vue files
-  {
-    files: ['**/*.vue'],
-    settings: {
-      'import-x/resolver-next': [
-        createTypeScriptImportResolver({
-          alwaysTryTypes: true,
-          extensions: ['.ts', '.vue', '.json', '.yaml'],
-        }),
-      ],
     },
   },
 ];
