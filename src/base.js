@@ -64,6 +64,7 @@ export const sharedRules = {
   'object-shorthand': ['error', 'always', {
     avoidQuotes: false,
   }],
+  'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 1 }],
   'no-nested-ternary': 'off',
   'no-underscore-dangle': ['error', {
     allowAfterThis: true,
