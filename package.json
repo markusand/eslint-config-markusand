@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-markusand",
-  "version": "2.0.0",
-  "description": "Opinionated linting configuration for TypeScript and Vue (ESLint 9+)",
+  "version": "3.0.0",
+  "description": "Opinionated linting configuration for TypeScript and Vue (ESLint 10+)",
   "type": "module",
   "main": "./src/base.js",
   "exports": {
@@ -21,17 +21,18 @@
   "author": "Marc Vilella <mvilella.and@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^10.0.0"
   },
   "dependencies": {
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.8.0",
     "eslint-plugin-import-x": "^4.5.0",
-    "eslint-plugin-vue": "^9.31.0",
+    "eslint-plugin-vue": "^10.10.0",
     "globals": "^15.14.0",
     "typescript-eslint": "^8.18.2"
   },
   "devDependencies": {
+    "eslint": "^10.8.0",
     "typescript": "^5.9.3"
   }
 }

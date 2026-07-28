@@ -95,7 +95,7 @@ class UnderscoreTest {
 var oldStyle = 'should use let or const'; // ❌
 const modernConst = 'good'; // ✅
 function testModernLet() {
-  let modernLet = 'initial';
+  let modernLet = 'initial'; // ❌: no-useless-assignment
   modernLet = 'mutated';
   return modernLet; // ✅
 }
@@ -104,8 +104,8 @@ function testModernLet() {
 let shouldBeConst = 'never reassigned'; // ❌
 const properConst = 'never changes'; // ✅
 function testMutableLet() {
-  let mutableLet = 'initial';
-  mutableLet = 'changed'; // ✅
+  let mutableLet = 'initial'; // ❌: no-useless-assignment
+  mutableLet = 'changed';
   return mutableLet;
 }
 

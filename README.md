@@ -9,13 +9,13 @@ Very opinionated linting configuration for TypeScript and Vue projects using **E
 
 ## Requirements
 
-- ESLint 9.0+
+- ESLint 10.0+
 - Vue 3
 
 ## Installation
 
 ```bash
-npm install -D eslint@^9.0.0 eslint-config-markusand
+npm install -D eslint@^10.0.0 eslint-config-markusand
 ```
 
 ## Usage

@@ -38,7 +38,7 @@ export default [
       ...importRules,
       'vue/multi-word-component-names': 'off',
       'vue/singleline-html-element-content-newline': 'off',
-      'vue/component-tags-order': ['error', {
+      'vue/block-order': ['error', {
         order: ['template', 'script', 'style'],
       }],
       'vue/html-closing-bracket-newline': ['error', {
